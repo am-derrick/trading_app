@@ -55,33 +55,29 @@ int getUserOption()
 
 void processUserOption(int userOption)
 {
-	if (userOption == 0)
+	switch (userOption) 
 	{
-		std::cout << "Invalid choice. Choose an option between 1-6" << std::endl;
-	}
-	if (userOption == 1)
-	{
-		printHelp();
-	}
-	if (userOption == 2)
-	{
-		printMarketStats();
-	}
-	if (userOption == 3)
-	{
-		enterOffer();
-	}
-	if (userOption == 4)
-	{
-		enterBid();
-	}
-	if (userOption == 5)
-	{
-		printWallet();
-	}
-	if (userOption == 6)
-	{
-		gotoNextTimeframe();
+		case 0:
+			std::cout << "Invalid choice. Choose an option between 1-6" << std::endl;
+			break;
+		case 1:
+			printHelp();
+			break;
+		case 2:
+			printMarketStats();
+			break;
+		case 3:
+			enterOffer();
+			break;
+		case 4:
+			enterBid();
+			break;
+		case 5:
+			printWallet();
+			break;
+		case 6:
+			gotoNextTimeframe();
+			break;
 	}
 }
 
