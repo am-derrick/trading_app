@@ -1,4 +1,5 @@
 #include <iostream>
+#include <map>
 
 void printMenu()
 {
@@ -53,41 +54,30 @@ int getUserOption()
 	return userOption;	
 }
 
-void processUserOption(int userOption)
-{
-	switch (userOption) 
-	{
-		case 0:
-			std::cout << "Invalid choice. Choose an option between 1-6" << std::endl;
-			break;
-		case 1:
-			printHelp();
-			break;
-		case 2:
-			printMarketStats();
-			break;
-		case 3:
-			enterOffer();
-			break;
-		case 4:
-			enterBid();
-			break;
-		case 5:
-			printWallet();
-			break;
-		case 6:
-			gotoNextTimeframe();
-			break;
-	}
-}
-
 int main()
 {
+	std::map<int, void(*)()> menu;
+	menu[1] = printHelp;
+	menu[2] = printMarketStats;
+	menu[3] = enterOffer;
+	menu[4] = enterBid;
+	menu[5] = printWallet;
+	menu[6] = gotoNextTimeframe;
+
 	while (true)
 	{
 		printMenu();
 		int userOption = getUserOption();
-		processUserOption(userOption);
+
+		auto i = menu.find(userOption);
+		if (i != menu.end())
+		{
+			i->second();
+		}
+		else
+		{
+			std::cout << "Invalid choice. Choose an option between 1-6" << std::endl; 
+		}
 	}
 
 	return 0;
