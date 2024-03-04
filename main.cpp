@@ -12,10 +12,10 @@ class OrderBookEntry
 		* set to the sent value
 		*/
 		OrderBookEntry( double _price,
-						double _amount,
-						std::string _timestamp,
-						std::string _product,
-						OrderBookType _orderType);
+				double _amount,
+				std::string _timestamp,
+				std::string _product,
+				OrderBookType _orderType);
 		
 		double price;
 		double amount;
@@ -25,10 +25,10 @@ class OrderBookEntry
 };
 
 OrderBookEntry::OrderBookEntry (double _price,
-								double _amount,
-								std::string _timestamp,
-								std::string _product,
-								OrderBookType _orderType)
+				double _amount,
+				std::string _timestamp,
+				std::string _product,
+				OrderBookType _orderType)
 : price(_price),
   amount (_amount),
   timestamp (_timestamp),
