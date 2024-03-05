@@ -12,10 +12,10 @@ class OrderBookEntry
 		* their respective values.
 		*/
 		OrderBookEntry( double _price,
-						double _amount,
-						std::string _timestamp,
-						std::string _product,
-						OrderBookType _orderType);
+				double _amount,
+				std::string _timestamp,
+				std::string _product,
+				OrderBookType _orderType);
 		
 		double price;
 		double amount;
