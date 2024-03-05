@@ -49,12 +49,7 @@ int main()
 	std::cout << "The price spread is " << compute.computePriceSpread(orders) << std::endl;
 	std::cout << std::endl;
 
-	while (true)
-	{
-		app.printMenu();
-		int userOption = app.getUserOption();
-		app.processUserOption(userOption);
-	}
+	app.init();
 
 	return 0;
 }

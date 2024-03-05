@@ -5,6 +5,7 @@ class MerkelMain
 {
     public:
         MerkelMain();
+        /** call this to run the sim*/
         void init();
         void printMenu();
         void printHelp();
