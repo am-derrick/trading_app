@@ -3,59 +3,8 @@
 #include <string>
 #include <vector>
 #include "OrderBookEntry.h"
+#include "MerkelMain.h"
 
-void printMenu()
-{
-	std::cout << "1: Print help " << std::endl;
-	std::cout << "2: Print exchange stats " << std::endl;
-	std::cout << "3: Place an ask " << std::endl;
-	std::cout << "4: Place a bid " << std::endl;
-	std::cout << "5: Print wallet " << std::endl;
-	std::cout << "6: Continue" << std::endl;
-
-	std::cout << "============= " << std::endl;
-}
-
-void printHelp()
-{
-	std::cout << "Help - your aim is to make money." << std::endl;
-	std::cout << "Analyse the market and make offers." << std::endl;
-}
-
-void printMarketStats()
-{
-	std::cout << "Market looks good" << std::endl;
-}
-
-void enterOffer()
-{
-	std::cout << "Make an offer" << std::endl;
-}
-
-void enterBid()
-{
-	std::cout << "Make a bid - enter the amount" << std::endl;
-}
-
-void printWallet()
-{
-	std::cout << "Your wallet is empty." << std::endl;
-}
-
-void gotoNextTimeframe()
-{
-	std::cout << "Going to next time frame." << std::endl;
-}
-
-int getUserOption()
-{
-	int userOption;
-
-	std::cout << "Choose an option 1-6" << std::endl;
-	std::cin >> userOption;
-	std::cout << "You chose: " << userOption << std::endl;
-	return userOption;	
-}
 
 double computeAveragePrice(std::vector<OrderBookEntry>& orders)
 {
@@ -121,6 +70,8 @@ double computePriceSpread(std::vector<OrderBookEntry>& orders)
 
 int main()
 {
+	MerkelMain app{};
+	
 	std::vector<OrderBookEntry> orders;
 
 	OrderBookEntry order1{7.4456,
@@ -156,8 +107,17 @@ int main()
 	std::cout << "The lowest price is " << computeLowPrice(orders) << std::endl;
 	std::cout << "The highest price is " << computeHighPrice(orders) << std::endl;
 	std::cout << "The price spread is " << computePriceSpread(orders) << std::endl;
+	std::cout << std::endl;
 
-    /*
+	while (true)
+	{
+		app.printMenu();
+		int userOption = app.getUserOption();
+		app.processUserOption(userOption);
+	}
+
+	
+	/*
 	std::map<int, void(*)()> menu;
 	menu[1] = printHelp;
 	menu[2] = printMarketStats;
@@ -182,6 +142,7 @@ int main()
 		}
 	}
 	*/
+
 
 	return 0;
 }
