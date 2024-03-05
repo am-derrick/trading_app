@@ -1,5 +1,7 @@
-#ifndef MERKEL_MAIN_H
-#define MERKEL_MAIN_H
+#pragma once
+
+#include <vector>
+#include "OrderBookEntry.h"
 
 class MerkelMain
 {
@@ -7,6 +9,8 @@ class MerkelMain
         MerkelMain();
         /** call this to run the sim*/
         void init();
+    private:
+        void loadOrderBook();
         void printMenu();
         void printHelp();
         void printMarketStats();
@@ -17,6 +21,7 @@ class MerkelMain
         int getUserOption();
         // int inputOption();
         void processUserOption(int userOption);
-};
 
-#endif
+
+        std::vector<OrderBookEntry> orders;
+};

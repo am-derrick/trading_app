@@ -1,5 +1,4 @@
-#ifndef COMPUTE_PRICES_H
-#define COMPUTE_PRICES_H
+#pragma once
 
 #include <vector>
 #include "OrderBookEntry.h"
@@ -14,5 +13,3 @@ class ComputePrices
         double computeHighPrice(std::vector<OrderBookEntry>& orders);
         double computePriceSpread(std::vector<OrderBookEntry>& orders);
 };
-
-#endif
