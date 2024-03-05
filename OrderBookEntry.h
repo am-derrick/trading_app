@@ -1,3 +1,6 @@
+#ifndef ORDER_BOOK_ENTRY_H
+#define ORDER_BOOK_ENTRY_H
+
 #include <string>
 
 enum class OrderBookType{ask, bid};
@@ -21,3 +24,5 @@ class OrderBookEntry
 		std::string product;
 		OrderBookType orderType;
 };
+
+#endif // ORDER_BOOK_ENTRY_H

@@ -1,4 +1,5 @@
-
+#ifndef MERKEL_MAIN_H
+#define MERKEL_MAIN_H
 
 class MerkelMain
 {
@@ -16,3 +17,5 @@ class MerkelMain
         // int inputOption();
         void processUserOption(int userOption);
 };
+
+#endif
