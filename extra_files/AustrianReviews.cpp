@@ -13,7 +13,7 @@ AustrianReview::AustrianReview (std::string _datePublished,
                         SeatType _seatType,
                         Recommended _recommended,
                         std::string _aircraft,
-                        Verified _verified)
+                        int _verified)
 : datePublished(_datePublished),
   rating(_rating),
   maxRating(_maxRating),

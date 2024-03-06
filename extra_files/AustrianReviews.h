@@ -5,7 +5,6 @@
 enum class SeatType {economy, business, premium};
 enum class TravelType {familyLeisure, soloLeisure, coupleLeisure, business};
 enum class Recommended {no, NA};
-enum class Verified {1, 0};
 
 class AustrianReview 
 {
@@ -22,7 +21,7 @@ class AustrianReview
                         SeatType _seatType,
                         Recommended _recommended,
                         std::string _aircraft,
-                        Verified _verified);
+                        int _verified);
 
         std::string datePublished;
         int rating;
@@ -36,6 +35,6 @@ class AustrianReview
         SeatType seatType;
         Recommended recommended;
         std::string aircraft;
-        Verified verified;
+        int verified;
 
 };
