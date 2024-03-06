@@ -1,4 +1,4 @@
-//#include "AustrianReviews.cpp"
+#include "AustrianReviews.h"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -48,13 +48,18 @@ int main()
     {
         while (getline(csvFile, row))
         {
-            std::cout << row << std::endl;
+            //std::cout << row << std::endl;
+            tokens = tokenize(row, ',');
+            for (const std::string& token : tokens)
+            {
+                std::cout << token << std::endl;
+            }
         }
         csvFile.close();
     }
     else
     {
-        std::cout << "File could not be opened" << std::endl;
+        std::cout << "The csv file could not be opened" << std::endl;
     }
 
     return 0;
