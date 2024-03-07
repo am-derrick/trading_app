@@ -48,12 +48,30 @@ int main()
     {
         while (getline(csvFile, row))
         {
-            //std::cout << row << std::endl;
             tokens = tokenize(row, ',');
+
+            try
+            {
+                int rating = std::stoi(tokens[2]);
+                int maxRating = std::stoi(tokens[3]);
+                std::string author = tokens[5];
+
+                std::cout << author << ": " << rating << "/" << maxRating << std::endl;
+            }
+            catch (const std::exception& e)
+            {
+                std::cout << "Integer expected, please provide correct value on column " << tokens[0] << std::endl;
+                std::cout << "Integer expected, please provide correct value on column " << tokens[0] << std::endl;
+                continue;
+            }
+
+            /*
+            comment this out to print all tokens
             for (const std::string& token : tokens)
             {
                 std::cout << token << std::endl;
             }
+            */
         }
         csvFile.close();
     }
