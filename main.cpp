@@ -4,14 +4,20 @@
 #include "OrderBookEntry.h"
 #include "MerkelMain.h"
 #include "ComputePrices.h"
+#include "CSVReader.h"
 
 
 int main()
 {
-	MerkelMain app{};
-	ComputePrices compute{};
+	//MerkelMain app{};
+	//app.init();
 
-	/*
+	CSVReader::readCSV("20200317.csv");
+}
+
+
+/*
+	ComputePrices compute{};
 	std::cout << orders[0].price <<std::endl;
 
 	for (OrderBookEntry& order : orders)
@@ -26,8 +32,3 @@ int main()
 	std::cout << "The price spread is " << compute.computePriceSpread(orders) << std::endl;
 	std::cout << std::endl;
 	*/
-
-	app.init();
-
-	return 0;
-}
