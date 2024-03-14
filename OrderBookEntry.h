@@ -17,7 +17,7 @@ class OrderBookEntry
 				std::string _product,
 				OrderBookType _orderType);
 
-		static OrderBookType stringToOrderBookType(std::string s);
+		static OrderBookType stringToOrderBookType(const std::string& s);
 		
 		double price;
 		double amount;

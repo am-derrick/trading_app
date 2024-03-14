@@ -7,7 +7,7 @@ class MerkelMain
 {
     public:
         MerkelMain();
-        /** call this to run the sim*/
+        /** call this to run the app*/
         void init();
     private:
         void loadOrderBook();

@@ -14,7 +14,7 @@ OrderBookEntry::OrderBookEntry (double _price,
 
 }
 
-OrderBookType OrderBookEntry::stringToOrderBookType(std::string s)
+OrderBookType OrderBookEntry::stringToOrderBookType(const std::string& s)
 {
     if (s == "ask")
     {
