@@ -9,10 +9,8 @@
 
 int main()
 {
-	//MerkelMain app{};
-	//app.init();
-
-	CSVReader::readCSV("20200317.csv");
+	MerkelMain app{};
+	app.init();
 }
 
 
