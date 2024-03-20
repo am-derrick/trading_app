@@ -93,3 +93,17 @@ std::string OrderBook::getNextTime(std::string timestamp)
     }
     return next_timestamp;
 }
+
+/** calculateTotal - calculates the total by finding the
+ *  product of price and amount for every order in the OrderBookEntry
+ */
+double OrderBook::calculateTotal(std::vector<OrderBookEntry>& orders)
+{
+    double total{0};
+
+    for (OrderBookEntry& o : orders)
+    {
+        total = o.price * o.amount;
+    }
+    return total;
+}
