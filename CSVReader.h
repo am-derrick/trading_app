@@ -20,7 +20,7 @@ class CSVReader
                                             std::string amount,
                                             std::string timestamp,
                                             std::string product,
-                                            std::string OrderBookType);
+                                            OrderBookType OrderBookType);
 
     private:
         static OrderBookEntry stringsToOBE(std::vector<std::string> strings);
