@@ -89,18 +89,23 @@ void MerkelMain::enterAsk()
 	std::vector<std::string> tokens = CSVReader::tokenize(input, ',');
 	if (tokens.size() != 3)
 	{
-		std::cout << "Bad imput! " << input << std::endl;
+		std::cout << "MerkelMain::enterAsk Bad input! " << input << std::endl;
 	}
 	else
 	{
-		OrderBookEntry obe = CSVReader::stringsToOBE(
+		try {
+			OrderBookEntry obe = CSVReader::stringsToOBE(
 			tokens[1],
 			tokens[2],
 			currentTime,
 			tokens[0],
 			OrderBookType::ask
-		);
+			);
+		} catch (const std::exception& e) {
+			std::cout << "MerkelMain::enterAsk Bad input! " << std::endl;
+		}
 	}
+		
 	
 	std::cout << "You typed: " << input << std::endl;
 }
