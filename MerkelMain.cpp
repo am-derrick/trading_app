@@ -50,9 +50,9 @@ void MerkelMain::printMarketStats()
 	{
 		std::cout << "Product: " << p << std::endl;
 		std::vector<OrderBookEntry> entries = orderBook.getOrders(OrderBookType::ask,
-																	p, currentTime);
+									p, currentTime);
 		std::vector<OrderBookEntry> ords = orderBook.getOrders(OrderBookType::bid,
-																	p, currentTime);
+									p, currentTime);
 		std::cout << "Asks seen: " << entries.size() << std::endl;
 		std::cout << "Bids made: " << ords.size() << std::endl;
 		std::cout << "Max ask: " << OrderBook::getHighPrice(entries) << std::endl;
